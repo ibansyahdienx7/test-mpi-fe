@@ -153,7 +153,9 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
-    // config pesanin.com
+
+    // config other //
+    'brand'         => 'Olshop Ibansyah',
     'key_recaptcha' => '6Lfq-VMkAAAAAN8ROG2Sum0MrLzNUueoCvDX_95t',
     'key_secret_cp' => '6Lfq-VMkAAAAAPM1bpLouOPPkc0m9MW_VArocEYL',
     'year_company'  => '2022',
