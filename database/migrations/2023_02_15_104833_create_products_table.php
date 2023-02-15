@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_category');
+            $table->integer('id_sub_category');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('role');
-            $table->string('is_login');
-            $table->timestamp('login_at')->nullable();
-            $table->string('pzn');
-            $table->rememberToken();
+            $table->integer('stocks');
+            $table->string('photo');
+            $table->integer('price');
+            $table->integer('discount');
+            $table->integer('real_price');
+            $table->string('slug');
             $table->nullableTimestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('products');
     }
 };
