@@ -1,65 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## TEST FE DEVELOPER - API
+## PT Mitra Payment Indonesia.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<center>
+    <div align="center">
+        <center>
+            <a href="https://mitrapayment.com/" target="_blank">
+                <center>
+                    <img src="https://mitrapayment.com/img/logo.png" width="200" alt="PT Mitra Payment Indonesia" title="PT Mitra Payment Indonesia" style='border-radius: 50% !important'>
+                </center>
+            </a>
+        </center>
+    </div>
+</center>
 
-## About Laravel
+## About Iban Syahdien Akbar
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Hi, Introduce me Iban Syahdan Akbar.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+I graduated from Gunadarma University, I majored in information systems, I learned about website-based programming and how to create structures that are used. Therefore, I am very interested in learning more about designing and building so that I can find out what is needed by a web-based application sequentially. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+To solve a problem on such a web-based application, I have experience in creating and designing through several projects, all done by defining various stakeholder requirements, conducting interviews with users so I can get their insights, learn from them, and turn them into ideas. which will provide a better experience for them. 
 
-## Learning Laravel
+Apart from learning about Website-Based Programming, I don't limit myself to learning other things related to my major such as analysis and design of information systems and database systems. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+I can handle working with different types of people to create new experiences and learn new perspectives, I can work in a team or individually, I also want to learn more about the work I will be working on in the future.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Follow Social Media
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- [Instagram](https://www.instagram.com/ibansyah_/).
+- [LinkedIn](https://www.linkedin.com/in/ibansyahdien/).
 
-## Laravel Sponsors
+## Contact Person
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- [Email](mailto:ibansyahdienx7@gmail.com?subject=Halo%20Iban%20Syahdien).
 
-### Premium Partners
+## Run Program
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Create `.env` file from `.env.example`
+- After that, Copy Paste in the `.env.example` file into the `.env` that was created
+- Create databases
+- Configure the database in the `.env` file
+- After that run `"php artisan migrate"` to migrate the database
+- How to migrate session table `php artisan session:table`
+- After the migrate is successful, run the program by `"php artisan serve"` you can customize the port on your php artisan serve, like the example in `.env.example`. The file is listed as `http://127.0.0.1:8001`, for `8001` is a port where the default port of php artisan is port `8000`.
+- If you want to change the port as above or you want to customize it to your liking, do it in the following way: `php artisan serve --port={according to your wishes}`
+Example: `php artisan serve --port=8001`
+- If you have done a custom port on php artisan things you should pay attention to in the .env file and the config/app file.
+In the .env file change it to a url with your custom port, for example: `"APP_URL=http://127.0.0.1:8001"`
+And in the config/app file, change it with the following example: `'url' => env('APP_URL', 'http://127.0.0.1:8001')`
+- So everything has run successfully
+- Because this project is a Back End Developer project to do a trial, please check postman to do a trial program.
+- Then, check in a `routes/api`. The file provides an end point for running the program.
+- After that, check one of the end points in postman, like the following example: `http://127.0.0.1:8000/v1/{end-point}`
+- Then the program is successfully executed, the success/failure response will be listed below in the postman
+- That's all the way to run this project, if you have trouble, please contact email: `ibansyahdienx7@gmail.com`
 
-## Contributing
+## TESTING 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- [Run in Postman](https://documenter.getpostman.com/view/25222741/2s935sn29V).
 
 ## License
 
