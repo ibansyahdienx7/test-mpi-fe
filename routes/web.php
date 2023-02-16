@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\LangController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Web\Auth\VerifyController;
+use App\Http\Controllers\Web\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,18 +17,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware'  => 'LanguageManager'], function () {
+
+    // // URL LANGUAGE //
+    Route::get('/lang/{locale}', [LangController::class, 'changeLang'])->name('lang.switch');
+
+    // ERROR //
+    Route::get('/error', function () {
+        return view('content');
+    })->name('errors');
+
+    Route::group(['middleware' => ['guest']], function () {
+
+        // HOME //
+        Route::get('/', [HomeController::class, 'Home'])->name('index');
+
+        // VERIFY //
+        Route::get('/verify/account/{email}', [VerifyController::class, 'verify'])->name('verify');
+    });
+
+    // AUTHORIZED AUTH //
+    Route::group(['middleware' => ['auth']], function () {
+    });
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';

@@ -529,4 +529,15 @@ trait MyHelper
 
         return $akses[$index];
     }
+
+    public function url_api()
+    {
+        // DEV //
+        $url = 'http://127.0.0.1:8001/v1';
+
+        // PROD //
+        // $url = 'https://api-market.pesanin.com/v1';
+
+        return $url;
+    }
 }
