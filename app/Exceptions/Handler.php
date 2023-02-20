@@ -43,13 +43,13 @@ class Handler extends ExceptionHandler
      */
     public function register(): void
     {
-        $this->renderable(function (HttpException $exception, $request) {
-            if ($request->is('v1/*')) {
-                return redirect(route('errors'))->with('error', $exception->getstatusCode() . ' | ' . $exception->getMessage());
-            } else {
-                return redirect(route('errors'))->with('error', $exception->getstatusCode() . ' | ' . $exception->getMessage());
-            }
-        });
+        // $this->renderable(function (HttpException $exception, $request) {
+        //     if ($request->is('v1/*')) {
+        //         return redirect(route('errors'))->with('error', $exception->getstatusCode() . ' | ' . $exception->getMessage());
+        //     } else {
+        //         return redirect(route('errors'))->with('error', $exception->getstatusCode() . ' | ' . $exception->getMessage());
+        //     }
+        // });
 
         // $this->renderable(function (RequestException $exception) {
         //     $response = $exception->getResponse();

@@ -120,10 +120,12 @@
 
 <script src="{{ config('app.url') . '/assets/js/jquery-3.4.1.min.js' }}" type="text/javascript"></script>
 {{-- <script src="{{ config('app.url') . '/assets/js/jquery-3.6.0.min.js' }}" type="text/javascript"></script> --}}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="{{ config('app.url') . '/assets/js/sweetalert.min.js' }}" type="text/javascript"></script>
 <script src="{{ config('app.url') . '/assets/vendor/swal-alert/dist/sweetalert2.all.min.js' }}" type="text/javascript"></script>
 <script src="{{ config('app.url') . '/assets/vendor/sweetalert2/sweetalert2.all.min.js' }}" type="text/javascript"></script>
 <script src="https://kit.fontawesome.com/aca8fe40b1.js" crossorigin="anonymous"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
 
 {{-- {!! RecaptchaV3::initJs() !!} --}}

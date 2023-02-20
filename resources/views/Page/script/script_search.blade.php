@@ -23,5 +23,7 @@
 <script src="{{ config('app.url') . '/assets/template/assets/vendor/datatables-buttons/js/buttons.print.min.js' }}"></script>
 <script src="{{ config('app.url') . '/assets/template/assets/vendor/datatables-buttons/js/buttons.colVis.min.js' }}"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+
 <!-- templates Main JS File -->
 <script src="{{ config('app.url') . '/assets/template/assets/js/main.js' }}"></script>

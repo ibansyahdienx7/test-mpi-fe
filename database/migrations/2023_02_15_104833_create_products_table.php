@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->integer('stocks');
             $table->string('photo');
+            $table->string('second_photo')->nullable();
+            $table->string('third_photo')->nullable();
             $table->integer('price');
             $table->integer('discount');
             $table->integer('real_price');

@@ -540,4 +540,145 @@ trait MyHelper
 
         return $url;
     }
+
+    public function url_api_iban()
+    {
+        $url = 'https://api-ibans.pesanin.com/v1';
+
+        return $url;
+    }
+
+    public function token()
+    {
+        $alamat = $this->url_api_iban() . '/token/challange';
+        $headers = [
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json'
+        ];
+
+        $client = new Client([
+            'headers' => $headers
+        ]);
+
+        $request = $client->request('POST', $alamat, [
+            'form_params' => [
+                'email' => 'ibansyahdienx7@gmail.com',
+                'password' => 'asinan1969'
+            ]
+        ]);
+
+        $response = $request->getBody()->getContents();
+        $response = json_decode($response);
+
+        if ($response) {
+            if ($response->status == true) {
+                return [
+                    'status' => true,
+                    'token' => $response->data->auth->access_token,
+                    'email' => $response->data->user->email,
+                    'id' => $response->data->user->id
+                ];
+            } else {
+                return [
+                    'status' => false,
+                ];
+            }
+        } else {
+            return [
+                'status' => false,
+            ];
+        }
+    }
+
+    public function resume()
+    {
+        $token = $this->token();
+
+        if ($token['status'] == false) {
+            return [
+                'status' => false,
+            ];
+        }
+
+        $alamat_profile = $this->url_api_iban() . '/resume/list';
+        $headers_profile = [
+            'Authorization' => 'Bearer ' . $token['token'],
+            'Content-Type' => 'applicationjson',
+            'Accept' => 'application/json'
+        ];
+
+        $client_profile = new Client([
+            'headers' => $headers_profile
+        ]);
+
+        $request_profile = $client_profile->request('POST', $alamat_profile, [
+            'form_params' => [
+                'user_id' => $token['id']
+            ]
+        ]);
+
+        $response_profile = $request_profile->getBody()->getContents();
+        $response_profile = json_decode($response_profile);
+
+        if ($response_profile) {
+            if ($response_profile->status == true) {
+                return [
+                    'status' => true,
+                    'data' => $response_profile->data
+                ];
+            } else {
+                return [
+                    'status' => false,
+                ];
+            }
+        } else {
+            return [
+                'status' => false,
+            ];
+        }
+    }
+
+    public function paymetnGateway()
+    {
+        $alamat = $this->url_api() . '/payment/list';
+        $client = new Client([
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'Accept' => 'application/json',
+            ]
+        ]);
+        $request = $client->request('GET', $alamat);
+        $response = $request->getBody()->getContents();
+        $response = json_decode($response);
+        if ($response) {
+            if ($response->status == true) {
+                $results = '';
+                $results .= '<div class="row">';
+                foreach ($response->data as $p) {
+                    $results .= '
+                    <div class="col-auto">
+                        <img src="' . $p->photo . '" class="img-fluid payment-foot" alt="' . $p->name . '" title="' . $p->name . '" />
+                    </div>
+                    ';
+                }
+                $results .= '</div>';
+
+                $statuses = true;
+            } else {
+                $results = NULL;
+                $statuses = false;
+            }
+
+            $result = $results;
+            $status = $statuses;
+        } else {
+            $result = NULL;
+            $status = false;
+        }
+
+        return [
+            'status' => $status,
+            'result' => $result,
+        ];
+    }
 }
